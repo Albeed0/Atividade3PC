@@ -1,0 +1,14 @@
+/home/arthyzxs/Atividade3PC/Atividade3PC/bin/Debug/net9.0/Atividade3PC
+/home/arthyzxs/Atividade3PC/Atividade3PC/bin/Debug/net9.0/Atividade3PC.deps.json
+/home/arthyzxs/Atividade3PC/Atividade3PC/bin/Debug/net9.0/Atividade3PC.runtimeconfig.json
+/home/arthyzxs/Atividade3PC/Atividade3PC/bin/Debug/net9.0/Atividade3PC.dll
+/home/arthyzxs/Atividade3PC/Atividade3PC/bin/Debug/net9.0/Atividade3PC.pdb
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.GeneratedMSBuildEditorConfig.editorconfig
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.AssemblyInfoInputs.cache
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.AssemblyInfo.cs
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.csproj.CoreCompileInputs.cache
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.dll
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/refint/Atividade3PC.dll
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.pdb
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.genruntimeconfig.cache
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/ref/Atividade3PC.dll
