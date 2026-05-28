@@ -12,7 +12,7 @@ namespace Atividade3PC
         static void Main(string[] args)
         {
            
-            Questao4();
+            Questao7();
         }
 
         static void Questao1()
@@ -119,12 +119,7 @@ namespace Atividade3PC
         {
             double num = 0.0;
             double[,] produtos = new double[2, 4];
-            double[,] produtosColuna = new double[2,4];
-            double [,] produtosLinhas = new double[2,4];
-            double[,] totalProdutos = new double[2,4];
 
-            double totalMeses = 0.0;
-            double totalSemanas = 0.0;
             double totalAno = 0.0;
 
             for(int i = 0; i < produtos.GetLength(0); i++)
@@ -139,31 +134,241 @@ namespace Atividade3PC
 
             for(int i = 0; i < produtos.GetLength(0); i++)
             {
+                double totalMeses = 0.0;
                 for(int j = 0; j < produtos.GetLength(1); j++)
                 {
                     totalMeses += produtos[i,j];
                     
                 }
-                System.Console.WriteLine($"O valor do {i+1}º Mês é: {totalMeses}");
+                Console.WriteLine($"O valor do {i+1}º Mês é: {totalMeses}");
             }
 
-                System.Console.WriteLine(totalMeses);
 
             for(int l = 0; l < produtos.GetLength(1); l++)
             {
+                double totalSemanas = 0.0;
                 for(int c = 0; c < produtos.GetLength(0); c++)
                 {
                     totalSemanas += produtos[c,l];
-                    Console.WriteLine($"O total da {c+1}º semana foi: {totalSemanas}");
+                    
                 }
+                Console.WriteLine($"O total da {l+1}º semana foi: {totalSemanas}");
             }
-            
-            System.Console.WriteLine(totalSemanas);
+
+            for(int l = 0; l < produtos.GetLength(1); l++)
+            {
+
+                for(int c = 0; c < produtos.GetLength(0); c++)
+                {
+                    totalAno += produtos[c,l];
+                    
+                }
+                
+            }
+
+            Console.WriteLine($"O total vendido no ano foi de: {totalAno}");
+
         }
 
         static void Questao5()
         {
+            List<string> cores = new List<string>();
+            cores.Add("Branco");
+            cores.Add("Vermelho");
+            cores.Add("Amarelo");
+            cores.Add("Azul");
+            cores.Add("Rosa");
+            string[] coresBackup = cores.GetRange(0,3).ToArray();
+
+            foreach(string cor in cores)
+            {
+                Console.Write($"{cor}");
+            }
+
+            Console.WriteLine();
+
             
+            for(int i = 0; i < 3; i++)
+            {
+                cores.RemoveAt(0);
+            }
+
+            cores.AddRange(coresBackup);
+
+            foreach(string cor in cores)
+            {
+                Console.Write($"Após remover as cores e remanejar elas, sobraram as cores: {cor}");
+                Console.WriteLine();
+            }
+            
+        }
+
+        static void Questao6()
+        {
+            List<string> usuarios = new List<string>();
+
+            MenuQuestao6(usuarios);
+        }
+
+        static void MenuQuestao6(List<string> temp)
+        {
+            int opcao = 99;
+            do
+            {
+                Console.Clear();
+                ExibirLista(temp);
+
+                Console.Write("1 - Adiconar usuário");
+                Console.Write("\n2 - Remover usuário");
+                Console.Write("\n3 - Substituir usuário");
+                Console.Write("\n4 - Limpar lista");
+                Console.Write("\n0 - Sair do programa");
+                Console.Write("\n Selecione uma opção: ");
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+            {
+                case 1:
+                    AdicionarUsuarioQuestao6(temp);
+                break;
+
+                case 2:
+                    RemoverUsuarioQuestao6(temp);
+                break;
+
+                case 3:
+                    SubstituirUsuarioQuestao6(temp);
+                break;
+
+                case 4:
+                    LimparListaQuestao6(temp);
+                break;
+
+                case 0:
+                    Console.WriteLine("Saindo do programa...");
+                    Thread.Sleep(800);
+                break;
+
+                default:
+                    Console.WriteLine("Opção inválida, por favor, digite apenas as opções exibidas.");
+                    Thread.Sleep(1500);
+                break;
+            }
+
+            }while(opcao != 0);
+
+            
+        }
+
+        static void ExibirLista(List<string> temp)
+        {
+            Console.WriteLine("===========================");
+            Console.WriteLine("=====Lista de Usuários=====");
+            Console.WriteLine("===========================");
+
+            if(temp.Count == 0)
+            {
+                Console.WriteLine("Nenhum usuário cadastrado ainda");
+            }
+            else
+            {
+                for(int i =0; i < temp.Count; i++)
+                {
+                    Console.WriteLine($"{(i + 1).ToString()} - {temp[i]}");
+                }
+            }
+
+            Console.WriteLine("===========================\n");
+        }
+
+        static void AdicionarUsuarioQuestao6(List<string> temp)
+        {
+            Console.WriteLine("Digite o nome do usuário que você deseja adicionar: ");
+            string nome = Console.ReadLine();
+            temp.Add(nome);
+        }
+
+        static void RemoverUsuarioQuestao6(List<string> temp)
+        {
+            Console.WriteLine("Digite o nome do usuário que você deseja remover: ");
+            string nome = Console.ReadLine();
+
+            if(temp.Contains(nome))
+            {
+                temp.Remove(nome);
+                Console.WriteLine("Usuário removido com sucesso");
+            }
+            else
+            {
+                Console.WriteLine("Este usuário não existe.");
+            }
+        }
+
+        static void SubstituirUsuarioQuestao6(List<string> temp)
+        {
+            Console.WriteLine("Digite o nome do usuário que você deseja Substituir: ");
+            string nome = Console.ReadLine();
+
+            if(temp.Contains(nome))
+            {
+                Console.WriteLine("Digite o usuário substituto: ");
+                string novoUsuario = Console.ReadLine();
+                temp.Insert(temp.IndexOf(nome), novoUsuario);
+                temp.Remove(nome);
+            }
+            else
+            {
+                Console.WriteLine("Este usuário não existe.");
+            }
+        }
+
+        static void LimparListaQuestao6(List<string> temp)
+        {
+            Console.WriteLine("Tem certeza que deseja limpar a lista? S/N");
+            char opcao = Convert.ToChar(Console.ReadLine().ToUpper());
+
+            if(opcao == 'S')
+            {
+                Console.WriteLine("Entendido, limpando lista...");
+                for(int i = 0; i < temp.Count; i++)
+                {
+                    temp.Clear();
+                }
+            }
+        }
+
+        static void Questao7()
+        {
+            Stack<string> pratos = new Stack<string>();
+            pratos.Push("prato 1");
+            pratos.Push("prato 2");
+            pratos.Push("prato 3");
+            pratos.Push("prato 4");
+            pratos.Push("prato 5");
+
+            Console.WriteLine("A lista de pratos antes da remoção: ");
+            foreach(string prato in pratos)
+            {
+                
+                Console.WriteLine(prato);
+            }
+
+            pratos.Pop();
+            pratos.Peek();
+            pratos.Pop();
+            pratos.Push("Prato 6");
+
+            Console.WriteLine("A lista de pratos depois de remover dois itens e adicionar o 6º prato: ");
+            foreach(string prato in pratos)
+            {
+                Console.WriteLine(prato);
+            }
+
+        }
+
+        static void Questao8()
+        {
+
         }
     }
 }

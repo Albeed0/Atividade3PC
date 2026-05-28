@@ -12,3 +12,4 @@
 /home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.pdb
 /home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.genruntimeconfig.cache
 /home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/ref/Atividade3PC.dll
+/home/arthyzxs/Atividade3PC/Atividade3PC/obj/Debug/net9.0/Atividade3PC.sourcelink.json
