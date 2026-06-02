@@ -12,7 +12,29 @@ namespace Atividade3PC
         static void Main(string[] args)
         {
            
-            Questao7();
+            Questao10();
+        }
+
+        static void Menu()
+        {
+            int opcao = 99;
+            Console.WriteLine("================================");
+            Console.WriteLine("=====ATIVIDADE AVALIATIVA 3=====");
+            Console.WriteLine("================================");
+            Console.WriteLine("||         QUESTÃO 1          ||");
+            Console.WriteLine("||         QUESTÃO 2          ||");
+            Console.WriteLine("||         QUESTÃO 3          ||");
+            Console.WriteLine("||         QUESTÃO 4          ||");
+            Console.WriteLine("||         QUESTÃO 5          ||");
+            Console.WriteLine("||         QUESTÃO 6          ||");
+            Console.WriteLine("||         QUESTÃO 7          ||");
+            Console.WriteLine("||         QUESTÃO 8          ||");
+            Console.WriteLine("||         QUESTÃO 9          ||");
+            Console.WriteLine("||         QUESTÃO 10         ||");
+            Console.WriteLine("================================");
+            Console.Write("SELECIONE A QUESTÃO:                ");
+            opcao = int.Parse(Console.ReadLine());
+            Console.WriteLine("================================");
         }
 
         static void Questao1()
@@ -118,7 +140,7 @@ namespace Atividade3PC
         static void Questao4()
         {
             double num = 0.0;
-            double[,] produtos = new double[2, 4];
+            double[,] produtos = new double[12, 4];
 
             double totalAno = 0.0;
 
@@ -368,7 +390,81 @@ namespace Atividade3PC
 
         static void Questao8()
         {
+            Stack<int> pilhaA = new Stack<int>();
+            pilhaA.Push(3);
+            pilhaA.Push(2);
+            pilhaA.Push(1);
 
+            Console.WriteLine("Pilha A sendo criada");
+
+            foreach(int bloco in pilhaA)
+            {
+                Console.Write(bloco + " ");
+            }
+
+            Console.WriteLine("Transferindo os blocos da pilha A para a pilha C...");
+
+            Stack<int> pilhaB = new Stack<int>();
+            Stack<int> pilhaC = new Stack<int>();
+
+
+            pilhaC.Push(pilhaA.Peek());
+            pilhaA.Pop();
+            pilhaC.Push(pilhaA.Peek());
+            pilhaA.Pop();
+            pilhaC.Push(pilhaA.Peek());
+            pilhaA.Pop();
+
+            foreach(var bloco in pilhaC)
+            {
+                Console.Write(bloco + " ");
+            }
+
+            Console.WriteLine("Transferindo os blocos da pilha C para a pilha B...");
+
+            pilhaB.Push(pilhaC.Peek());
+            pilhaC.Pop();
+            pilhaB.Push(pilhaC.Peek());
+            pilhaC.Pop();
+            pilhaB.Push(pilhaC.Peek());
+            pilhaC.Pop();
+            
+            foreach(var bloco in pilhaB)
+            {
+                Console.Write(bloco + " ");
+            }
+
+            Console.WriteLine();
+        }
+
+        static void Questao9()
+        {
+            Queue<string> pessoas = new Queue<string>();
+            pessoas.Enqueue("Pessoa 1");
+            pessoas.Enqueue("Pessoa 2");
+            pessoas.Enqueue("Pessoa 3");
+            pessoas.Enqueue("Pessoa 4");
+            pessoas.Enqueue("Pessoa 5");
+
+            foreach(string pessoa in pessoas)
+            {
+                Console.WriteLine(pessoa);
+            }
+
+            pessoas.Dequeue();
+            pessoas.Peek();
+            pessoas.Dequeue();
+            pessoas.Enqueue("Pessoa 6");
+
+            foreach(string pessoa in pessoas)
+            {
+                Console.WriteLine(pessoa);
+            }
+        }
+    
+        static void Questao10()
+        {
+            
         }
     }
 }
