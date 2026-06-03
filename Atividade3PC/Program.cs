@@ -464,7 +464,39 @@ namespace Atividade3PC
     
         static void Questao10()
         {
-            
+            Queue<int> fila1 = new Queue<int>();
+            Queue<int> fila2 = new Queue<int>();
+
+            for(int i = 0; i <= 4; i++)
+            {
+                Console.WriteLine("Digite um número para ser colocado na fila: ");
+                int num = int.Parse(Console.ReadLine());
+
+                fila1.Enqueue(num);
+            }
+
+            for(int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Digite um número para ser colocado na fila2: ");
+                int num = int.Parse(Console.ReadLine());
+
+                fila2.Enqueue(num);
+            }
+
+           int[] arrayTemp = new int[fila1.Count * 2];
+           fila1.CopyTo(arrayTemp, 0);
+           int[] arrayTemp2 = fila2.ToArray();
+
+            for(int i = 0; i < arrayTemp.Length; i++)
+            {
+                Console.WriteLine(arrayTemp[i]);
+                Console.WriteLine(arrayTemp2[i]);
+            }
+           Console.WriteLine("Trocando as filas de lugar...") ;
+
+           fila1.Clear();
+           
+           
         }
     }
 }
